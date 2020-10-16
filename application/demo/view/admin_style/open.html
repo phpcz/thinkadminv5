@@ -1,0 +1,182 @@
+{extend name='admin@main'}
+
+{block name="content"}
+
+<form onsubmit="return false;" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <fieldset class="margin-bottom-15 margin-left-40">
+        <legend class="notselect">页面说明</legend>
+        <div class="layui-code border-0 margin-top-0">
+            页面说明文字
+        </div>
+    </fieldset>
+
+    <div class="layui-card-body think-box-shadow">
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">单文本样式</label>
+            <div class="layui-col-xs10">
+                <input name="" value='' required placeholder="请输入文本" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">多行文本样式</label>
+            <div class="layui-col-xs10">
+                <textarea placeholder="请输入多行文本" class="layui-textarea" name="">多行文本</textarea>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">时间选择器</label>
+            <div class="layui-col-xs10">
+                <input type="text" data-date-input="date" name="entry_date" value='' placeholder="请输入入职日期" class="layui-input">
+            </div>
+        </div>
+
+        <!--<div class="layui-row margin-bottom-15">-->
+            <!--<label class="layui-col-xs2 think-form-label">时间范围选择器</label>-->
+            <!--<div class="layui-col-xs10">-->
+                <!--<input type="text" data-date-input="date-range" name="entry_date" value='' placeholder="请输入入职日期" class="layui-input">-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">下拉框layui</label>
+            <div class="layui-col-xs10">
+                <select name='' class='layui-select' lay-search>
+                    <option value=''>请选择下拉框</option>
+                    <option value='1'>下拉框一</option>
+                    <option value='2'>下拉框二</option>
+                </select>
+                <p class="color-desc">lay-search控制支持搜索功能</p>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">下拉框原生</label>
+            <div class="layui-col-xs10">
+                <select name='' class='layui-select full-width' lay-ignore>
+                    <option value=''>请选择下拉框</option>
+                    <option value='1'>下拉框一</option>
+                    <option value='2'>下拉框二</option>
+                </select>
+                <p class="color-desc">lay-ignore控制原生，full-width控制下拉框长度</p>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">单图上传</label>
+            <div class="layui-col-xs10">
+                <input name="image" type="hidden" value="{$vo.image|default=''}">
+                <script>$('[name="image"]').uploadOneImage()</script>
+                <p class="color-desc">单图上传方式 uploadOneImage()</p>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">多图上传</label>
+            <div class="layui-col-xs10">
+                <input name="images" type="hidden" value="{$vo.images|default=''}">
+                <script>$('[name="images"]').uploadMultipleImage()</script>
+                <p class="color-desc">多图上传方式 uploadMultipleImage()</p>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">文件上传</label>
+            <div class="layui-col-xs10">
+                <label class="layui-col-xs10 think-form-group-left">
+                    <input name="file" required value='{$vo.file|default=""}' placeholder="请上传文件" class="layui-input">
+                </label>
+                <a class="layui-col-xs2 layui-btn think-form-group-right" data-file="btn" data-field="file" data-type="png,jpg,gif">
+                    <i class="layui-icon layui-icon-upload"></i> 上传文件
+                </a>
+                <p class="color-desc">data-type控制上传文件类型（需在参数配置中设置）data-uptype 控制上传方式</p>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">单选项layui</label>
+            <div class="layui-col-xs10">
+                <input name="radio" type="radio" value="1" title="选项一">
+                <input name="radio" type="radio" value="2" title="选项二">
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">单选项原生</label>
+            <div class="layui-col-xs10">
+                <label class="think-checkbox layui-unselect">
+                    <input type="radio"  name="radio2" value="1" lay-ignore> 选项一
+                </label>
+                <label class="think-checkbox layui-unselect">
+                    <input type="radio"  name="radio2" value="2" lay-ignore> 选项二
+                </label>
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">多选项layui</label>
+            <div class="layui-col-xs10">
+                <input type="checkbox" name="checkbox[]" value="1" title="选项一">
+                <input type="checkbox" name="checkbox[]" value="2" title="选项二">
+            </div>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">多选项原生</label>
+            <div class="layui-col-xs10">
+                <div class="layui-textarea">
+                    <label class="think-checkbox layui-unselect">
+                        <input type="checkbox" checked name="authorize[]" value="1" lay-ignore> 选项一
+                    </label>
+                    <label class="think-checkbox layui-unselect">
+                        <input type="checkbox" checked name="authorize[]" value="2" lay-ignore> 选项二
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr-line-dashed"></div>
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <div class="layui-row margin-bottom-15 text-center">
+            <button class="layui-btn" type='submit'>保存数据</button>
+            <button class="layui-btn layui-btn-danger" onclick="javascript:history.back()" type="button">取消编辑</button>
+        </div>
+    </div>
+</form>
+<script>
+    window.form.render();
+
+    form.on('select(layui标识)', function(data){
+        console.log(data.value); //得到被选中的值
+
+        $.ajax({
+            url : "", //接口
+            type : 'GET',
+            data :{},
+            success : function (res) {
+
+                if (res.code == 10000)
+                {
+                    $("#equipment").html('');
+                    //数据处理
+                    for (var i = 0 ; i < data.length ; i++)
+                    {
+                        $("元素").append('');
+                    }
+
+                    window.form.render();
+                }else{
+                    layer.msg('获取数据失败，请稍后再试！')
+                }
+            },
+            error : function(res) {
+                layer.msg('服务器错误，请稍后再试！')
+            }
+        });
+
+    });
+</script>
+{/block}

@@ -1,0 +1,15 @@
+{extend name="admin@main"}
+
+{block name="button"}
+{if auth('config')}
+<a class="layui-btn layui-btn-sm layui-btn-primary" data-modal="{:url('config')}">修改系统配置</a>
+{/if}
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow margin-bottom-15">
+    <span class="color-green font-w7 text-middle">模板类型：</span>
+    <a data-open="{:url('open')}" class="layui-btn layui-btn-sm">打开新页</a>
+    <a data-modal="{:url('modal')}" class="layui-btn layui-btn-sm">打开弹窗</a>
+</div>
+{/block}

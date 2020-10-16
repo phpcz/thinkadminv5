@@ -1,0 +1,129 @@
+
+
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+    <div class="layui-card-body">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单文本样式</label>
+            <div class="layui-input-block">
+                <input name="" value='' required placeholder="请输入文本" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">多行文本样式</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入多行文本" class="layui-textarea" name="">多行文本</textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">下拉框layui</label>
+            <div class="layui-input-block">
+                <select name='' class='layui-select' lay-search>
+                    <option value=''>请选择下拉框</option>
+                    <option value='1'>下拉框一</option>
+                    <option value='2'>下拉框二</option>
+                </select>
+                <p class="color-desc">lay-search控制支持搜索功能</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">下拉框原生</label>
+            <div class="layui-input-block">
+                <select name='' class='layui-select full-width' lay-ignore>
+                    <option value=''>请选择下拉框</option>
+                    <option value='1'>下拉框一</option>
+                    <option value='2'>下拉框二</option>
+                </select>
+                <p class="color-desc">lay-ignore控制原生，full-width控制下拉框长度</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单图上传</label>
+            <div class="layui-input-block">
+                <input name="image" type="hidden" value="{$vo.image|default=''}">
+                <script>$('[name="image"]').uploadOneImage()</script>
+                <p class="color-desc">单图上传方式 uploadOneImage()</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">多图上传</label>
+            <div class="layui-input-block">
+                <input name="images" type="hidden" value="{$vo.images|default=''}">
+                <script>$('[name="images"]').uploadMultipleImage()</script>
+                <p class="color-desc">多图上传方式 uploadMultipleImage()</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">文件上传</label>
+            <div class="layui-input-block">
+                <label class="layui-col-xs10 think-form-group-left">
+                    <input name="file" required value='{$vo.file|default=""}' placeholder="请上传文件" class="layui-input">
+                </label>
+                <a class="layui-col-xs2 layui-btn think-form-group-right" data-file="btn" data-uptype data-field="file" data-type="png,jpg,gif">
+                    <i class="layui-icon layui-icon-upload"></i> 上传文件
+                </a>
+                <p class="color-desc">data-type控制上传文件类型（需在参数配置中设置）data-uptype 控制上传方式</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单选项layui</label>
+            <div class="layui-input-block">
+                <input name="radio" type="radio" value="1" title="选项一">
+                <input name="radio" type="radio" value="2" title="选项二">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单选项原生</label>
+            <div class="layui-input-block">
+                <label class="think-checkbox layui-unselect">
+                    <input type="radio"  name="radio2" value="1" lay-ignore> 选项一
+                </label>
+                <label class="think-checkbox layui-unselect">
+                    <input type="radio"  name="radio2" value="2" lay-ignore> 选项二
+                </label>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">多选项layui</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="checkbox[]" value="1" title="选项一">
+                <input type="checkbox" name="checkbox[]" value="2" title="选项二">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">多选项原生</label>
+            <div class="layui-input-block">
+                <div class="layui-textarea">
+                    <label class="think-checkbox layui-unselect">
+                        <input type="checkbox" checked name="authorize[]" value="1" lay-ignore> 选项一
+                    </label>
+                    <label class="think-checkbox layui-unselect">
+                        <input type="checkbox" checked name="authorize[]" value="2" lay-ignore> 选项二
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>
+
+<script>
+    window.form.render();
+</script>
