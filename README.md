@@ -15,19 +15,6 @@ ThinkAdmin 非常适用快速二次开发，默认集成 微信开发组件，�
 * 当前版本使用 ThinkPHP 5.1.x，对 PHP 版本标注不低于 PHP 5.6，具体请阅读 ThinkPHP 官方文档；
 * 环境需开启 PATHINFO，不再支持 ThinkPHP 的 URL 兼容模式运行（源于如何优雅的展示）；
 
-## 技术支持
-
-开发文档：http://doc.thinkadmin.top/thinkadmin-v5
-
-开发前请认真阅读 ThinkPHP 官方文档会对您有帮助哦！
-
-本地开发命令`php think run`，使用`http://127.0.0.1:8000`访问项目。
-
-PHP 开发技术交流（ QQ 群 513350915）
-
-[![PHP微信开发群 (SDK)](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=ae25cf789dafbef62e50a980ffc31242f150bc61a61164458216dd98c411832a) 
-
-
 ## 注解权限
 
 注解权限是指通过方法注释来实现后台RBAC授权管理，用注解来管理功能节点。
@@ -100,9 +87,6 @@ public function index(){
 |ThinkLibrary|ThinkPHP扩展组件|
 |WeChatDeveloper|微信开放工具组件|
 |WeOpenDeveloper|微信开放平台组件|
-
-## 赞助打赏
-![赞助](http://static.thinkadmin.top/pay.png)
 
 ## 项目版本
 体验账号及密码都是`admin`
