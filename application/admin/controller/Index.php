@@ -43,7 +43,7 @@ class Index extends Controller
         $this->title = '系统管理后台';
         $auth = AdminService::instance()->apply(true);
         $this->menus = MenuService::instance()->getTree();
-        if (empty($this->menus) && !$auth->isLogin()) {
+        if (!$auth->isLogin()) {
             $this->redirect('@admin/login');
         } else {
             $this->fetch();
