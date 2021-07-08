@@ -30,7 +30,7 @@ class Index extends Controller
      */
     public function index()
     {
-        echo "webhook测试";
+        echo "webhook测试！！！";
         $this->redirect('@admin/login');
     }
 }
